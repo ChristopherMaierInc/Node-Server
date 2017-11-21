@@ -1,14 +1,16 @@
 const http = require('http');
 const port = 3000;
 
-let students = ['Chris', 'Tracy'];
+let todos = {
+  item: 'wash clothes', done: false
+};
 
 function handleMyRequest(request, response) {
-  if (request.url === '/students') {
+  if (request.url === '/todos') {
     response.writeHead(200, {
       'Content-Type': 'application/json'
     })
-    response.end(JSON.stringify(students));
+    response.end(JSON.stringify(todos));
   } else if (request.url === '/bobjane') {
     response.end('BUY TYRES HERE!!!!');
   } else {
