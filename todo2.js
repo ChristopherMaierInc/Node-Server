@@ -12,7 +12,7 @@ let todos2 = [
 app.use(bodyParser.json());
 
 // GET /students
-app.get('/todos2', (req, res) => {
+app.get('/api/todos2', (req, res) => {
   console.log('GET todos2');
   // Send the user a list of students
   res.send(todos2);
