@@ -18,4 +18,8 @@ app.get('/api/todos2', (req, res) => {
   res.send(todos2);
 })
 
+app.use((req, res, next) => {
+  res.status(404).send("Sorry can't find that!")
+})
+
 app.listen(port);
