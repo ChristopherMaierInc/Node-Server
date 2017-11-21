@@ -14,9 +14,12 @@ function handleMyRequest(request, response) {
     response.end(JSON.stringify(todos));
   } else if (request.url === '/bobjane') {
     response.end('BUY TYRES HERE!!!!');
-  } else {
+  } else if (request.url === '/api/teapot') {
     response.writeHead(418);
-    response.end();
+    response.end('I’m A Teapot');
+  } else {
+    response.writeHead(404);
+    response.end('ERROR!!!!!!!!!');
   }
 }
 
