@@ -11,10 +11,18 @@ let todos2 = [
 // BodyParser to make it easy to read POST data
 app.use(bodyParser.json());
 
-// GET /students
+// GET /api/todos2
 app.get('/api/todos2', (req, res) => {
   console.log('GET todos2');
   // Send the user a list of students
+  res.send(todos2);
+})
+
+// POST /api/todos2
+app.post('/api/todos2', (req, res) => {
+  // Add the new task to our array
+  todos2.push(req.body);
+  // Send the user a list of tasks
   res.send(todos2);
 })
 
